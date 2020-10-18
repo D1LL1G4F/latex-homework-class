@@ -1,143 +1,170 @@
-\documentclass[11pt,largemargins]{homework}
+\documentclass[11pt]{exam}
+\newcommand{\myname}{Matej Kňazík} %Write your name in here
+\newcommand{\myUCO}{506481} %write your UCO in here
+\newcommand{\myhwtype}{Homework}
+\newcommand{\myhwnum}{1} %Homework set number
+\newcommand{\myclass}{IV054 2020}
+\newcommand{\mylecture}{}
+\newcommand{\mysection}{}
 
-\newcommand{\hwname}{Jacob Zimmerman}
-\newcommand{\hwemail}{jezimmer}
-\newcommand{\hwtype}{Homework}
-\newcommand{\hwnum}{0}
-\newcommand{\hwclass}{12-345}
-\newcommand{\hwlecture}{0}
-\newcommand{\hwsection}{Z}
+% Prefix for numedquestion's
+\newcommand{\questiontype}{Question}
 
-% This is just used to generate filler content. You don't need it in an actual
-% homework!
-\usepackage{lipsum}
+% Use this if your "written" questions are all under one section
+% For example, if the homework handout has Section 5: Written Questions
+% and all questions are 5.1, 5.2, 5.3, etc. set this to 5
+% Use for 0 no prefix. Redefine as needed per-question.
+\newcommand{\writtensection}{0}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}  % Some math symbols
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\usepackage{centernot}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\card}{\vert}{\vert}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\def\indented#1{\list{}{}\item[]}
+\let\indented=\endlist
+
+\newcounter{questionCounter}
+\newcounter{partCounter}[questionCounter]
+
+\newenvironment{namedquestion}[1][\arabic{questionCounter}]{%
+    \addtocounter{questionCounter}{1}%
+    \setcounter{partCounter}{0}%
+    \vspace{.2in}%
+        \noindent{\bf #1}%
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{numedquestion}[0]{%
+	\stepcounter{questionCounter}%
+    \vspace{.2in}%
+        \ifx\writtensection\undefined
+        \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+        \else
+          \if\writtensection0
+          \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+          \else
+          \noindent{\bf \questiontype \; \writtensection.\arabic{questionCounter} }%
+        \fi
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{alphaparts}[0]{%
+  \begin{enumerate}[label=\textbf{(\alph*)}]
+}{\end{enumerate}}
+
+\newenvironment{arabicparts}[0]{%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]
+}{\end{enumerate}}
+
+\newenvironment{questionpart}[0]{%
+  \item
+}{}
+
+\newcommand{\answerbox}[1]{
+\begin{framed}
+\vspace{#1}
+\end{framed}}
+
+\pagestyle{head}
+
+\headrule
+\header{\textbf{\myclass\ \mylecture\mysection}}%
+{\textbf{\myname\ (\myUCO)}}%
+{\textbf{\myhwtype\ \myhwnum}}
 
 \begin{document}
-\maketitle
+\thispagestyle{plain}
+\begin{center}
+  {\Large \myclass{} \myhwtype{} \myhwnum} \\
+  \myname{} (\myUCO{}) \\
+  \today
+\end{center}
 
-\question
-  This is my answer to the first question.
 
-  Don't forget to fill in your personal and class information at the top!
+%Here you can enter answers to homework questions
 
-\question
-  This question's number will be auto-incremented.
-
-  \lipsum[2]
-
-\question*{Super Fancy Named Question}
-  This question was given a fancy name!
-
-  \lipsum[3]
-
-% Sometimes questions get separated from their bodies. Use a \newpage to force
-% them to wrap to the next page.
-\newpage
-\question
-  Using the \texttt{induction} environment is a great way to typeset induction proofs!
-  \begin{induction}
-    \basecase
-      Here I have my base case.
-      This is usually about 1-2 lines of text that is not entirely difficult to come up with.
-      That doesn't mean it's not important though!
-    \indhyp
-      Assume cool things to make proof work. Look, math:
-      \[a^2 + b^2 = c^2\]
-    \indstep
-      Prove all the things.  When in doubt, write in Latin, because things
-      written in Latin sound more true.  Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit. Maecenas tempor risus in dapibus aliquam. Donec at
-      euismod dui. In libero turpis, blandit quis vestibulum ac, rutrum sit amet
-      est. Suspendisse nec lacus vel dui lobortis lacinia at sit amet risus.
-      Fusce dui ex, imperdiet nec finibus ut, bibendum a lacus.
-  \end{induction}
-
-  Therefore, we have proven the claim by induction in the \texttt{induction} environment.
-
-\question
-  Use the arabicparts environment to include the questionCounter number in the list.
-  \begin{arabicparts}
-    \questionpart Use \LaTeX
-    \questionpart ???
-    \questionpart Profit!
-  \end{arabicparts}
-
-  \lipsum[7]
-
-\question
-  Use the alphaparts environment for letters instead of numbers.
+\begin{numedquestion}
   \begin{alphaparts}
-    \questionpart
-      Use \LaTeX
-    \questionpart ???
-    \questionpart Profit!
+    \item h(C) = 3
+    \item
+    $
+        11011 \rightarrow{} 11111 \\
+        01101 \rightarrow{} 01001 \\
+        10011 \rightarrow{} 10010 \\
+        00111 \rightarrow{} 11111$ or $00100
+    $
   \end{alphaparts}
+\end{numedquestion}
 
-\question
-    Question part numbers are auto-incremented within the same question, so if you have some question parts...
+\begin{numedquestion}
+  \begin{alphaparts}
+    \item $C_2 = \{1111,1100,1001,0011\} $
+    \item $d_0 = d = 1; M_0 = M = 2; n = 2; C_0 = (2,2,1) = \{10,11\} $
+  \end{alphaparts}
+\end{numedquestion}
 
-    \begin{alphaparts}
-        \questionpart
-            Use \LaTeX
-        \questionpart ???
-    \end{alphaparts}
 
-    Followed by some additional text, followed by some more question parts:
+% if you do not solve some of the questions use this command to increment counter
+% \setcounter{questionCounter}{4}
+% \begin{numedquestion}
+%   Questions 2 and 3 were not solved, this is an answer to question 5.
+% \end{numedquestion}
 
-    \begin{alphaparts}
-        \questionpart Profit!
-    \end{alphaparts}
 
-    All parts will be continuously numbered.
+% if questions have subparts, use this command
+\begin{numedquestion}
+  \begin{alphaparts}
+    \item not equivalent
+    \item not equivalent
+  \end{alphaparts}
+\end{numedquestion}
 
-\question
-  Question numbers continue to auto-increment, regardless of question type.
-
-  \lipsum[4]
-
-% Use \renewcommand{\questiontype}{<text>} to change what word is displayed
-% before numbered questions
-\renewcommand{\questiontype}{Task}
-\question
-  This question has a different question type!
-
-  \lipsum[5]
-
-\renewcommand{\questiontype}{Question}
-
-\question
+\begin{numedquestion}
   You can still do things like nesting lists inside of these environments.
   \begin{alphaparts}
-    \questionpart Use \LaTeX
-      \begin{enumerate}
-        \item Open terminal
-        \item Open vim
-        \item Write LaTeX
+    \item part a
+      \begin{enumerate}[label=(\roman*)]
+        \item making point number 1
+        \item making point number 2
+        \item making point number 3
       \end{enumerate}
-    \questionpart ???
-    \questionpart Profit!
+    \item part b
+    \item part c
   \end{alphaparts}
+\end{numedquestion}
 
-  \lipsum[9]
+\begin{numedquestion}
+  Using the \texttt{description} environment is a great way to typeset induction proofs!
+  \begin{description}
+    \item[Base Case:]
+      Here I have my base case.
+    \item[Induction Hypothesis:]
+      Assume things to make proof work. 
+    \item[Induction Step:]
+      Prove all the things.
+  \end{description}
 
-% Use the \setcounter{questionCounter}{<x>} to force the question number to a
-% particular question. If your written homework's question start at number 9001,
-% use the following
-\setcounter{questionCounter}{9000}
-\question
-  \href{https://www.youtube.com/watch?v=SiMHTK15Pik}{It's over 9000!!!}
-
-  \lipsum[6]
+  Therefore, we have proven the claim by induction on in the \texttt{description} environment.
+\end{numedquestion}
 
 
-\section{}
-  You can also use the \texttt{section} macro for starting a question.
-
-  \lipsum[10]
-
-\section*{Using the \texttt{section} Macro}
-  The starred \texttt{section*} works as well.
-
-  \lipsum[11]
 
 \end{document}
