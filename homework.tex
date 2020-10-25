@@ -132,8 +132,8 @@
 % if questions have subparts, use this command
 \begin{numedquestion}
   \begin{alphaparts}
-    \item not equivalent
-    \item not equivalent
+    \item \textbf{not equivalent}, second column of $C_2$ cannot be mapped to any of the columns in $C_1$
+    \item \textbf{not equivalent}, first column of $C_2$ cannot be mapped to any of the columns in $C_1$
   \end{alphaparts}
 \end{numedquestion}
 
@@ -148,11 +148,11 @@
       \begin{enumerate}[label=(\roman*)]
         \item 29058x
         \item $2+9+0+5+8+x = 24 + x$
-        \item $(24 + x) mod 10 = 0$
+        \item $(24 + x)$ $mod$ $10 = 0$
         \item $x = 6$
       \end{enumerate}
-    \item TODO
-    \item TODO
+    \item \textbf{No.} For example receiving 0 istead of 5 on position that is being multiplied by 2 will be unnoticed by the validating computation.
+    \item \textbf{Yes.} The validating computation is able to detect error when adjanced digits are being switched. However this error couldn't occure more than once in the received code. Otherwise we might not be able to detect it.
   \end{alphaparts}
 \end{numedquestion}
 
