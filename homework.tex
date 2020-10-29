@@ -103,21 +103,40 @@
 
 \begin{numedquestion}
   \begin{alphaparts}
-    \item h(C) = 3
-    \item
-    $
-        11011 \rightarrow{} 11111 \\
-        01101 \rightarrow{} 01001 \\
-        10011 \rightarrow{} 10010 \\
-        00111 \rightarrow{} 11111$ or $00100
-    $
+    \item \textbf{No.} But if we would add codeword 000 we would make it linear.
+    \item \textbf{No.} For example if we invert linear code $C = {000,011,101,110}$ we get $C'={111,100,010,001}$ which is not linear.
+    \item \textbf{Yes.} Because XOR is basically sum operation and if we sum two binary linear codes we get another linear code.
   \end{alphaparts}
 \end{numedquestion}
 
 \begin{numedquestion}
   \begin{alphaparts}
-    \item $C_2 = \{1111,1100,1001,0011\} $
-    \item $d_0 = d = 1; M_0 = M = 2; n = 2; C_0 = (2,2,1) = \{10,11\} $
+    \item 
+    $G$ is a $k \times n $ matrix \\
+    $k = 2$ \\
+    $n = 5$ \\
+    $d = 2$ \\
+    \item 
+        \begin{tabular}{ |c|c|c|c| } 
+            \hline
+            00000 & cell2 & cell3 \\ 
+            \hline
+            00001 & cell5 & cell6 \\ 
+            \hline
+            00010 & cell8 & cell9 \\ 
+            \hline
+            00100 & cell8 & cell9 \\ 
+            \hline
+            01000 & cell8 & cell9 \\ 
+            \hline
+            10000 & cell8 & cell9 \\ 
+            \hline
+            11000 & cell8 & cell9 \\ 
+            \hline
+            00011 & cell8 & cell9 \\ 
+            \hline
+        \end{tabular}
+    \item 
   \end{alphaparts}
 \end{numedquestion}
 
@@ -138,11 +157,12 @@
 \end{numedquestion}
 
 \begin{numedquestion}
-  TODO
+  \begin{proof}
+ 
+  \end{proof}
 \end{numedquestion}
 
 \begin{numedquestion}
-  You can still do things like nesting lists inside of these environments.
   \begin{alphaparts}
     \item 19054x
       \begin{enumerate}[label=(\roman*)]
