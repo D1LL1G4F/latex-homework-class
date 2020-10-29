@@ -119,24 +119,26 @@
     \item 
         \begin{tabular}{ |c|c|c|c| } 
             \hline
-            00000 & cell2 & cell3 \\ 
+            00000 & 01010 & 10101 & 11111 \\ 
             \hline
-            00001 & cell5 & cell6 \\ 
+            00001 & 01011 & 10100 & \textbf{11110} \\ 
             \hline
-            00010 & cell8 & cell9 \\ 
+            00010 & 01000 & 10111 & 11101 \\ 
             \hline
-            00100 & cell8 & cell9 \\ 
+            00100 & 01110 & 10001 & 11011 \\ 
             \hline
-            01000 & cell8 & cell9 \\ 
+            01000 & 00010 & 11101 & 10111 \\ 
             \hline
-            10000 & cell8 & cell9 \\ 
+            10000 & 11010 & 00101 & 01111 \\ 
             \hline
-            11000 & cell8 & cell9 \\ 
+            11000 & 10010 & 01101 & 00111 \\ 
             \hline
-            00011 & cell8 & cell9 \\ 
+            00011 & 01001 & 10110 & 11100 \\ 
             \hline
         \end{tabular}
-    \item 
+    \item
+    coset leader: 00001 \\
+    decoded: 11111
   \end{alphaparts}
 \end{numedquestion}
 
@@ -151,15 +153,40 @@
 % if questions have subparts, use this command
 \begin{numedquestion}
   \begin{alphaparts}
-    \item \textbf{not equivalent}, second column of $C_2$ cannot be mapped to any of the columns in $C_1$
-    \item \textbf{not equivalent}, first column of $C_2$ cannot be mapped to any of the columns in $C_1$
+    \item Yes.
+    \item No.
+    \item Yes for binary linear codes.
   \end{alphaparts}
 \end{numedquestion}
 
 \begin{numedquestion}
-  \begin{proof}
- 
-  \end{proof}
+\begin{alphaparts}
+  \item 
+  \[
+  H =
+  \begin{bmatrix}
+1 & 1 & 0 & 1 & 0 & 0\\
+1 & 0 & 1 & 0 & 1 & 0\\
+1 & 1 & 1 & 0 & 0 & 1
+\end{bmatrix}
+  \]
+  
+  \item
+  
+  \[
+  H^T =
+  \begin{bmatrix}
+1 & 1 & 1 \\
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+  \]
+  $e = 000010 $\\
+  $e * H^T = 010 $
+\end{alphaparts}
 \end{numedquestion}
 
 \begin{numedquestion}
