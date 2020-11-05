@@ -2,7 +2,7 @@
 \newcommand{\myname}{Matej Kňazík} %Write your name in here
 \newcommand{\myUCO}{506481} %write your UCO in here
 \newcommand{\myhwtype}{Homework}
-\newcommand{\myhwnum}{1} %Homework set number
+\newcommand{\myhwnum}{3} %Homework set number
 \newcommand{\myclass}{IV054 2020}
 \newcommand{\mylecture}{}
 \newcommand{\mysection}{}
@@ -103,9 +103,26 @@
 
 \begin{numedquestion}
   \begin{alphaparts}
-    \item \textbf{No.} But if we would add codeword 000 we would make it linear.
-    \item \textbf{No.} For example if we invert linear code $C = {000,011,101,110}$ we get $C'={111,100,010,001}$ which is not linear.
-    \item \textbf{Yes.} Because XOR is basically sum operation and if we sum two binary linear codes we get another linear code.
+    \item $n = 7;$ deg($g(x)$) = k = 4; $g_0=1;g_1=0;g_2=1;g_3=1;g_4=1$
+    \[
+    G =
+        \begin{bmatrix}
+        1 & 0 & 1 & 1 & 1 & 0 & 0\\
+        0 & 1 & 0 & 1 & 1 & 1 & 0\\
+        0 & 0 & 1 & 0 & 1 & 1 & 1\\
+        \end{bmatrix}
+    \]
+    \item $h(x)=1+x^2+x^3$
+    \[
+     H =
+        \begin{bmatrix}
+        1 & 1 & 0 & 1 & 0 & 0 & 0\\
+        0 & 1 & 1 & 0 & 1 & 0 & 0\\
+        0 & 0 & 1 & 1 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1 & 1 & 0 & 1\\
+        \end{bmatrix}
+    \]
+    \item $c=1011100$
   \end{alphaparts}
 \end{numedquestion}
 
@@ -191,31 +208,27 @@
 
 \begin{numedquestion}
   \begin{alphaparts}
-    \item 19054x
-      \begin{enumerate}[label=(\roman*)]
-        \item 29058x
-        \item $2+9+0+5+8+x = 24 + x$
-        \item $(24 + x)$ $mod$ $10 = 0$
-        \item $x = 6$
-      \end{enumerate}
-    \item \textbf{No.} For example receiving 0 istead of 5 on position that is being multiplied by 2 will be unnoticed by the validating computation.
-    \item \textbf{Yes.} The validating computation is able to detect error when adjanced digits are being switched. However this error couldn't occure more than once in the received code. Otherwise we might not be able to detect it.
+    \item 
+    \[
+  C_1 =
+      \begin{bmatrix}
+    1 & 0 & 0 & 1 \\
+    0 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 0 \\
+    0 & 0 & 0 & 0 
+    \end{bmatrix}
+      \]
   \end{alphaparts}
 \end{numedquestion}
 
+
+
 \begin{numedquestion}
-\begin{center}
-\begin{tabular}[c]{ | l | c | }
-  \hline			
-  A & 0 \\
-  B & 100 \\
-  C & 101 \\
-  D & 11 \\
-  \hline  
-\end{tabular}
-\end{center}
-Average code length $L(C) = 1.8$ \\
-Efficiency $S(X) = 1.78$
+
+Since $C \subset C^\perp$ than the code is weakly self-dual code.
+All codewords in such code have even weight.
+
+
 \end{numedquestion}
 
 
