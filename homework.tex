@@ -164,10 +164,26 @@
 %You are given n = 633917, for which you know that it is a product of two primes and
 %phi(n) = 632256. Find factors of n without using brute force. Explain your calculations.
 
+
+
 \begin{numedquestion}
-  $n = 633917 = p \times q$ \\
-  $phi(n) = 632256 = (p-1)\times(q-1)$ \\
-  $\rightarrow 633917 = 593 \times 1069$ \\ 
+  \begin{alphaparts}
+  \item 
+    $G'= S \times G \times P$
+    \[
+    G'=
+    \begin{pmatrix}
+1 & 0 & 3 & 2 & 2 & 1 & 1 \\
+1 & 1 & 2 & 2 & 3 & 0 & 1 \\
+0 & 0 & 2 & 2 & 1 & 1 & 1 \\
+0 & 1 & 2 & 3 & 2 & 1 & 1
+    \end{pmatrix}
+    \]
+    \item
+    $w=1010;e=0000100$ \\
+    $c=w \times G' + e$ \\
+    $c=$
+  \end{alphaparts}
 \end{numedquestion}
 
 
