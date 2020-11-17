@@ -124,6 +124,17 @@
     \textbf{decrypted: $w = 506481$}
     
     \item
+    $w = 81 = 1010001_2; m=521; u=131$ \\
+    $c = 1010001 \times \{393, 396, 140, 152, 435, 486, 323\}$ \\
+    $c = (393 + 140 + 323)$ mod $m$ \\
+    $c = 856$ mod $521$ \\
+    \textbf{encrypted $c = 335$} \\
+    $x=c \times u^{-1}$ mod $ m$ \\
+    $x=335 \times 131^{-1}$ mod $521$ \\
+    $x = 273$ \\
+    \textbf{decrypted: $273$ is mapped on private key $X$ which results in $1010001$}
+    
+    
     
   \end{alphaparts}
 \end{numedquestion}
