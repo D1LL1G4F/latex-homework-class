@@ -2,7 +2,7 @@
 \newcommand{\myname}{Matej Kňazík} %Write your name in here
 \newcommand{\myUCO}{506481} %write your UCO in here
 \newcommand{\myhwtype}{Homework}
-\newcommand{\myhwnum}{3} %Homework set number
+\newcommand{\myhwnum}{5} %Homework set number
 \newcommand{\myclass}{IV054 2020}
 \newcommand{\mylecture}{}
 \newcommand{\mysection}{}
@@ -103,60 +103,60 @@
 
 \begin{numedquestion}
   \begin{alphaparts}
-    \item $n = 7;$ deg($g(x)$) = k = 4; $g_0=1;g_1=0;g_2=1;g_3=1;g_4=1$
-    \[
-    G =
-        \begin{bmatrix}
-        1 & 0 & 1 & 1 & 1 & 0 & 0\\
-        0 & 1 & 0 & 1 & 1 & 1 & 0\\
-        0 & 0 & 1 & 0 & 1 & 1 & 1\\
-        \end{bmatrix}
-    \]
-    \item $h(x)=1+x^2+x^3$
-    \[
-     H =
-        \begin{bmatrix}
-        1 & 1 & 0 & 1 & 0 & 0 & 0\\
-        0 & 1 & 1 & 0 & 1 & 0 & 0\\
-        0 & 0 & 1 & 1 & 0 & 1 & 0\\
-        0 & 0 & 0 & 1 & 1 & 0 & 1\\
-        \end{bmatrix}
-    \]
-    \item $c=1011100$
+    \item
+    $w = 506481; e = 11; n = 1147$ \\
+    $w_0=506; w_1=481$ \\
+    $c_0= w_0^e$ mod $n$ \\
+    $c_1= w_1^e$ mod $n$  \\
+    $c_0= 670$ \\
+    $c_1= 481$ \\
+    $c =$ concat $(c_0,c_1)$ \\
+    \textbf{encrypted: $c=135675$} \\
+    $d = e^{-1} mod (p-1)(q-1)$  \\
+    $d = 11^{-1}$ mod  $30 \times 36$ \\
+    $d = 11^{-1}$ mod $1080$ \\
+    $d = 491$ \\
+    $w_0=c_0^d$ mod $ n$ \\
+    $w_0=506=670^491$ mod $ 1147$ \\
+    $w_1=c_1^d$ mod $ n$ \\
+    $w_1=481=481^491$ mod $ 1147$ \\
+    $w=$ concat $(w_0,w_1)$ \\
+    \textbf{decrypted: $w = 506481$}
+    
+    \item
+    
   \end{alphaparts}
 \end{numedquestion}
 
 \begin{numedquestion}
-  \begin{alphaparts}
-    \item 
-    $G$ is a $k \times n $ matrix \\
-    $k = 2$ \\
-    $n = 5$ \\
-    $d = 2$ \\
-    \item 
-        \begin{tabular}{ |c|c|c|c| } 
-            \hline
-            00000 & 01010 & 10101 & 11111 \\ 
-            \hline
-            00001 & 01011 & 10100 & \textbf{11110} \\ 
-            \hline
-            00010 & 01000 & 10111 & 11101 \\ 
-            \hline
-            00100 & 01110 & 10001 & 11011 \\ 
-            \hline
-            01000 & 00010 & 11101 & 10111 \\ 
-            \hline
-            10000 & 11010 & 00101 & 01111 \\ 
-            \hline
-            11000 & 10010 & 01101 & 00111 \\ 
-            \hline
-            00011 & 01001 & 10110 & 11100 \\ 
-            \hline
-        \end{tabular}
-    \item
-    coset leader: 00001 \\
-    decoded: 11111
-  \end{alphaparts}
+    $65201327 = p \times q; \\
+    \phi(65201327)=65185176=(p-1)\times(q-1) \\
+    \rightarrow 65201327 = 7933 \times 8219$ \\
+    \\
+    $134635439 = p \times q; \\
+    \phi(134635439)=134610840=(p-1)\times(q-1) \\
+    \rightarrow  134635439 = 8219 \times 16381$ \\
+    \\
+    $122176133 = p \times q; \\
+    \phi(122176133)=122152800=(p-1)\times(q-1) \\
+    \rightarrow 122176133 = 7933 \times 15401$ \\
+    \\
+    $122237737 = p \times q; \\
+    \phi(122237737)=122214400=(p-1)\times(q-1) \\
+    \rightarrow 122237737 = 7937 \times 15401$ \\
+    \\
+    $99633161 = p \times q; \\
+    \phi(99633161)=99612672=(p-1)\times(q-1) \\
+    \rightarrow 99633161 = 7937 \times 12553$ \\ 
+\end{numedquestion}
+
+%You are given n = 633917, for which you know that it is a product of two primes and
+%phi(n) = 632256. Find factors of n without using brute force. Explain your calculations.
+
+\begin{numedquestion}
+  $n = 633917 = p \times q$ \\
+  $phi(n) = 632256 = (p-1)\times(q-1)$ \\
+  $\rightarrow 633917 = 593 \times 1069$ \\ 
 \end{numedquestion}
 
 
@@ -166,68 +166,33 @@
 %   Questions 2 and 3 were not solved, this is an answer to question 5.
 % \end{numedquestion}
 
-
-% if questions have subparts, use this command
+\setcounter{questionCounter}{5}
 \begin{numedquestion}
-  \begin{alphaparts}
-    \item Yes.
-    \item No.
-    \item Yes for binary linear codes.
-  \end{alphaparts}
-\end{numedquestion}
+key: \textbf{tabularecta} \\
+key length: \textbf{11} \\
+Decipher: \\
+BABBA GESSU CCESS FULCR YPTAN ALYSI SOFTH EVIGE NEREC IPHER WASPR OBABL YACHI EVEDI
+NEIGH TEENF IFTYF OURSO ONAFT ERHIS SPATW ITHTH WAITE SBUTH ISDIS COVER YWENT COMPL
+ETELY UNREC OGNIZ EDBEC AUSEH ENEVE RPUBL ISHED ITTHE DISCO VERYC AMETO LIGHT ONLYI
+NTHET WENTI ETHCE NTURY WHENS CHOLA RSEXA MINED BABBA GESEX TENSI VENOT ESINT HEMEA
+NTIME HISTE CHNIQ UEWAS INDEP ENDEN TLYDI SCOVE REDBY FRIED RICHW ILHEL MKASI SKIAR
+ETIRE DOFFI CERIN THEPR USSIA NARMY EVERS INCEW HENHE PUBLI SHEDH ISCRY PTANA LYTIC
+BREAK THROU GHIND IEGEH EIMSC HRIFT ENUND DIEDE CHIFF RIRKU NSTSE CRETW RITIN GANDT
+HEART OFDEC IPHER INGTH ETECH NIQUE HASBE ENKNO WNAST HEKAS ISKIT ESTAN DBABB AGESC
+ONTRI BUTIO NHASB EENLA RGELY IGNOR EDAND WHYDI DBABB AGEFA ILTOP UBLIC IZEHI SCRAC
+KINGO FSUCH AVITA LCIPH ERHEC ERTAI NLYHA DAHAB ITOFN OTFIN ISHIN GPROJ ECTSA NDNOT
+PUBLI SHING HISDI SCOVE RIESW HICHM IGHTS UGGES TTHAT THISI SJUST ONEMO REEXA MPLEO
+FHISL ACKAD AISIC ALATT ITUDE HOWEV ERTHE REISA NALTE RNATI VEEXP LANAT IONHI SDISC
+OVERY OCCUR REDSO ONAFT ERTHE OUTBR EAKOF THECR IMEAN WARAN DONET HEORY ISTHA TITGA
+VETHE BRITI SHACL EARAD VANTA GEOVE RTHEI RRUSS IANEN EMYIT ISQUI TEPOS SIBLE THATB
+RITIS HINTE LLIGE NCEDE MANDE DTHAT BABBA GEKEE PHISW ORKSE CRETT HUSPR OVIDI NGTHE
+MWITH ANINE YEARH EADST ARTOV ERTHE RESTO FTHEW ORLDI FTHIS WASTH ECASE THENI TWOUL
+DFITI NWITH THELO NGSTA NDING TRADI TIONO FHUSH INGUP CODEB REAKI NGACH IEVEM ENTSI
+NTHEI NTERE STSOF NATIO NALSE CURIT YAPRA CTICE THATH ASCON TINUE DINTO THETW ENTIE
+THCEN TURYS IMONS INGHT HECOD EBOOK
 
-\begin{numedquestion}
-\begin{alphaparts}
-  \item 
-  \[
-  H =
-  \begin{bmatrix}
-1 & 1 & 0 & 1 & 0 & 0\\
-1 & 0 & 1 & 0 & 1 & 0\\
-1 & 1 & 1 & 0 & 0 & 1
-\end{bmatrix}
-  \]
-  
-  \item
-  
-  \[
-  H^T =
-  \begin{bmatrix}
-1 & 1 & 1 \\
-1 & 0 & 1 \\
-0 & 1 & 1 \\
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1 
-\end{bmatrix}
-  \]
-  $e = 000010 $\\
-  $e * H^T = 010 $
-\end{alphaparts}
-\end{numedquestion}
-
-\begin{numedquestion}
-  \begin{alphaparts}
-    \item 
-    \[
-  C_1 =
-      \begin{bmatrix}
-    1 & 0 & 0 & 1 \\
-    0 & 1 & 1 & 1 \\
-    1 & 1 & 1 & 0 \\
-    0 & 0 & 0 & 0 
-    \end{bmatrix}
-      \]
-  \end{alphaparts}
-\end{numedquestion}
-
-
-
-\begin{numedquestion}
-
-Since $C \subset C^\perp$ than the code is weakly self-dual code.
-All codewords in such code have even weight.
-
+Corrected spaces clearly shows english text: \\
+babb ages successful crypt analysis of the vigenere cipher was probably achieved in eighteen fifty four soon after his spat with th wait es but his discovery went completely unrecognized because he never published it the discovery came to light only in the twentieth century when scholars examined babb ages extensive notes in the meantime his technique was independently discovered by fried rich wilhelm kasiskia retired officer in the prussian army ever since when he published his crypt an alytic tcaa aaa
 
 \end{numedquestion}
 
