@@ -164,25 +164,68 @@
 %You are given n = 633917, for which you know that it is a product of two primes and
 %phi(n) = 632256. Find factors of n without using brute force. Explain your calculations.
 
+\begin{numedquestion}
+  $n = 633917 = p \times q$ \\
+  $phi(n) = 632256 = (p-1)\times(q-1)$ \\
+  $\rightarrow 633917 = 593 \times 1069$ 
+\end{numedquestion}
 
-
+\setcounter{questionCounter}{4}
 \begin{numedquestion}
   \begin{alphaparts}
   \item 
     $G'= S \times G \times P$
     \[
-    G'=
+    S \times G = 
     \begin{pmatrix}
-1 & 0 & 3 & 2 & 2 & 1 & 1 \\
-1 & 1 & 2 & 2 & 3 & 0 & 1 \\
-0 & 0 & 2 & 2 & 1 & 1 & 1 \\
-0 & 1 & 2 & 3 & 2 & 1 & 1
+0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 1 & 1 & 0 & 0
+    \end{pmatrix} 
+    \]
+    \[
+    S \times G \times P = G'=
+    \begin{pmatrix}
+1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 & 0 & 1 & 1
     \end{pmatrix}
     \]
     \item
-    $w=1010;e=0000100$ \\
+    $w=(1010);e=(0000100)$ \\
     $c=w \times G' + e$ \\
-    $c=$
+    $c=(1010100) + (0000100)$ \\
+    \textbf{encoded: $c=1010000$} \\
+    \item
+     \[
+    P^{-1} =
+    \begin{pmatrix}
+0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+    \end{pmatrix}
+    \]
+    $c_1=c \times P^{-1}$ \\
+    $c_1=(0010001)$
+    \[
+    H =
+    \begin{pmatrix}
+1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 1 & 0 & 0 & 1 
+    \end{pmatrix}
+    \]
+    syndrome $S(c_1)=(010)$ \\
+    $c_0=(0010011)$ \\
+    $w_1=(0010)$ \\
+    $w=w_1 \times S^{-1}$ \\
+    \textbf{decoded: $w=1010$}
   \end{alphaparts}
 \end{numedquestion}
 
@@ -192,36 +235,6 @@
 % \begin{numedquestion}
 %   Questions 2 and 3 were not solved, this is an answer to question 5.
 % \end{numedquestion}
-
-\setcounter{questionCounter}{5}
-\begin{numedquestion}
-key: \textbf{tabularecta} \\
-key length: \textbf{11} \\
-Decipher: \\
-BABBA GESSU CCESS FULCR YPTAN ALYSI SOFTH EVIGE NEREC IPHER WASPR OBABL YACHI EVEDI
-NEIGH TEENF IFTYF OURSO ONAFT ERHIS SPATW ITHTH WAITE SBUTH ISDIS COVER YWENT COMPL
-ETELY UNREC OGNIZ EDBEC AUSEH ENEVE RPUBL ISHED ITTHE DISCO VERYC AMETO LIGHT ONLYI
-NTHET WENTI ETHCE NTURY WHENS CHOLA RSEXA MINED BABBA GESEX TENSI VENOT ESINT HEMEA
-NTIME HISTE CHNIQ UEWAS INDEP ENDEN TLYDI SCOVE REDBY FRIED RICHW ILHEL MKASI SKIAR
-ETIRE DOFFI CERIN THEPR USSIA NARMY EVERS INCEW HENHE PUBLI SHEDH ISCRY PTANA LYTIC
-BREAK THROU GHIND IEGEH EIMSC HRIFT ENUND DIEDE CHIFF RIRKU NSTSE CRETW RITIN GANDT
-HEART OFDEC IPHER INGTH ETECH NIQUE HASBE ENKNO WNAST HEKAS ISKIT ESTAN DBABB AGESC
-ONTRI BUTIO NHASB EENLA RGELY IGNOR EDAND WHYDI DBABB AGEFA ILTOP UBLIC IZEHI SCRAC
-KINGO FSUCH AVITA LCIPH ERHEC ERTAI NLYHA DAHAB ITOFN OTFIN ISHIN GPROJ ECTSA NDNOT
-PUBLI SHING HISDI SCOVE RIESW HICHM IGHTS UGGES TTHAT THISI SJUST ONEMO REEXA MPLEO
-FHISL ACKAD AISIC ALATT ITUDE HOWEV ERTHE REISA NALTE RNATI VEEXP LANAT IONHI SDISC
-OVERY OCCUR REDSO ONAFT ERTHE OUTBR EAKOF THECR IMEAN WARAN DONET HEORY ISTHA TITGA
-VETHE BRITI SHACL EARAD VANTA GEOVE RTHEI RRUSS IANEN EMYIT ISQUI TEPOS SIBLE THATB
-RITIS HINTE LLIGE NCEDE MANDE DTHAT BABBA GEKEE PHISW ORKSE CRETT HUSPR OVIDI NGTHE
-MWITH ANINE YEARH EADST ARTOV ERTHE RESTO FTHEW ORLDI FTHIS WASTH ECASE THENI TWOUL
-DFITI NWITH THELO NGSTA NDING TRADI TIONO FHUSH INGUP CODEB REAKI NGACH IEVEM ENTSI
-NTHEI NTERE STSOF NATIO NALSE CURIT YAPRA CTICE THATH ASCON TINUE DINTO THETW ENTIE
-THCEN TURYS IMONS INGHT HECOD EBOOK
-
-Corrected spaces clearly shows english text: \\
-babb ages successful crypt analysis of the vigenere cipher was probably achieved in eighteen fifty four soon after his spat with th wait es but his discovery went completely unrecognized because he never published it the discovery came to light only in the twentieth century when scholars examined babb ages extensive notes in the meantime his technique was independently discovered by fried rich wilhelm kasiskia retired officer in the prussian army ever since when he published his crypt an alytic tcaa aaa
-
-\end{numedquestion}
 
 
 
