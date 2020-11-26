@@ -220,14 +220,24 @@ The Legendre symbol $(\frac{y}{p})$ is defined to be 0 if $y$ is a multiple of $
   $m_3= 71282872 \pmod{698069} = 79834$ \\
   $m_4= 69998488 \pmod{698069} = 191588$ \\
   \textbf{original plaintext:} $m_1 = m = 506481$
+  \item
+  $m = 506481$ \\
+  $p = 567899$ \\
+  $q = 2$ \\
+  $x = 12345$ \\
+  $r = 938$ \\
+  $y = q^x \pmod{p}$ \\
+  $y = 2^{12345} \pmod{567899}$ \\
+  $y = 222588$ \\
+  $a = q^r \pmod{p}$ \\
+  $a = 2^{938} \pmod{567899}$ \\
+  $a = 201104$ \\
+  $b = y^r \times m \pmod{p}$ \\
+  $b = 222588^{938} \times 506481 \pmod{567899}$ \\
+  $b = 566491$ \\
+  \textbf{ciphertext:} $c = (a,b) = (201104,566491)$
   
-  
-  \item TODO...
   \end{alphaparts}
-\end{numedquestion}
-
-\begin{numedquestion}
-TODO...
 \end{numedquestion}
 
 \setcounter{questionCounter}{4}
@@ -246,7 +256,6 @@ TODO...
     \item
     P(at least three) = P(at least two) - P(exactly two) \\
     P(at least three) $\approx 0.8$
-    \item
   \end{alphaparts}
 \end{numedquestion}
 
