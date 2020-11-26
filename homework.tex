@@ -175,7 +175,53 @@ The Legendre symbol $(\frac{y}{p})$ is defined to be 0 if $y$ is a multiple of $
 
 \begin{numedquestion}
   \begin{alphaparts}
-  \item TODO...
+  \item
+  $n = 698069$ \\
+  $m = 506481$ \\
+  $p \times q = 887 \times 787$ \\
+  $c = m^2 \pmod{n}$ \\
+  $c = 506481^2 \pmod{698069}$ \\
+  $c = 256523003361 \pmod{698069}$ \\
+  \textbf{cyphertext: }$c = 97586$ \\
+  $m_p = \sqrt{c} \pmod{p} = \pm c^{\frac{p+1}{4}} \pmod{p}$ \\
+  $m_q = \sqrt{c} \pmod{q} = \pm c^{\frac{q+1}{4}} \pmod{q}$ \\
+  $m_p = \sqrt{97586} \pmod{887} = \pm 97586^{\frac{888}{4}} \pmod{887}$ \\
+  $m_q = \sqrt{97586} \pmod{787} = \pm 97586^{\frac{788}{4}} \pmod{787}$ \\
+  $m_p = \pm 4$ \\
+  $m_q = \pm 440$ \\
+  \\
+  $m_1p = 4$ \\
+  $m_1q = 440$ \\
+  \\
+  $m_2p = -4$ \\
+  $m_2q = 440$ \\
+  \\
+  $m_3p = 4$ \\
+  $m_3q = -440$ \\
+  \\
+  $m_4p = -4$ \\
+  $m_4q = -440$ \\
+  \\
+  extended Euclidean algorithm = EEA \\
+  EEA(p,q) = \{$y_p,y_q$\} \\
+  EEA(887, 787) = \{-181, 204\} \\
+  $m_1=y_p \times p \times m_1q + y_q \times q \times m_1p \pmod{n}$ \\
+  $m_2=y_p \times p \times m_2q + y_q \times q \times m_2p \pmod{n}$ \\
+  $m_3=y_p \times p \times m_3q + y_q \times q \times m_3p \pmod{n}$ \\
+  $m_4=y_p \times p \times m_4q + y_q \times q \times m_4p \pmod{n}$ \\
+  \\
+  $m_1=-181 \times 887 \times 440 + 204 \times 787 \times 4 \pmod{698069}$ \\
+  $m_2=-181 \times 887 \times 440 + 204 \times 787 \times -4 \pmod{698069}$ \\
+  $m_3=-181 \times 887 \times -440 + 204 \times 787 \times 4 \pmod{698069}$ \\
+  $m_4=-181 \times 887 \times -440 + 204 \times 787 \times -4 \pmod{698069}$ \\
+  \\
+  $m_1= -69998488 \pmod{698069} = 506481$ \\
+  $m_2= -71282872 \pmod{698069} = 618235$\\
+  $m_3= 71282872 \pmod{698069} = 79834$ \\
+  $m_4= 69998488 \pmod{698069} = 191588$ \\
+  \textbf{original plaintext:} $m_1 = m = 506481$
+  
+  
   \item TODO...
   \end{alphaparts}
 \end{numedquestion}
