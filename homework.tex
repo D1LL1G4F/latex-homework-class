@@ -2,7 +2,7 @@
 \newcommand{\myname}{Matej Kňazík} %Write your name in here
 \newcommand{\myUCO}{506481} %write your UCO in here
 \newcommand{\myhwtype}{Homework}
-\newcommand{\myhwnum}{6} %Homework set number
+\newcommand{\myhwnum}{7} %Homework set number
 \newcommand{\myclass}{IV054 2020}
 \newcommand{\mylecture}{} 
 \newcommand{\mysection}{}
@@ -102,44 +102,48 @@
 %Here you can enter answers to homework questions
 
 \begin{numedquestion}
-
-    $x \equiv 6 \pmod{17}$ \\
-	$x \equiv 3 \pmod{7}$ \\
-	$x \equiv 9 \pmod{11}$ \\
-	\\
-	$x \equiv b_1 \pmod{n_1}$ \\
-	$x \equiv b_2 \pmod{n_2}$ \\
-	$x \equiv b_3 \pmod{n_3}$ \\
-	\\
-	$N = n_1 \times n_2 \times n_3 = 17 \times 7 \times 11 = 1309$
-	\begin{table}[h!]
-    \begin{center}
-    \label{tab:table1}
-    \begin{tabular}{|c|c|c|c|c|}
-      i & $b_i$ & $N_i = \frac{N}{n_i}$ & $N_i' = $ Inverse of $N_i$ & $b_i \times N_i \times N_i'$\\
-      \hline
-      1 & 6 & 77 & 2 & 924\\
-      2 & 3 & 187 & 3 & 1683\\
-      3 & 9 & 119 & 5 & 5355\\
-    \end{tabular}
-    \end{center}
-    \end{table}
+\begin{alphaparts}
+    \item
+    $m = 506481$ \\
+    $d = 303703$ \\
+    $e = 7$ \\
+    $n = 1065023$ \\
+    $r = 12345$
+    $s = m^d \pmod{n}$ \\
+    $s = 506481^303703 \pmod{1065023}$ \\
+    \textbf{signature: }$s = 293391$ \\
+    \textbf{verification: }$s^e \pmod{n} = 506481$ \\
+    \item
+    $m = 506481$ \\
+    $(x;q,p,y) = (60221;2,555557,552508)$ \\
+    $a = q^r \pmod{p}$ \\
+    $a = 2^12345 \pmod{555557}$
+    $a = 148533$
+    $b = (m - a \times x) \times r^{-1} \pmod{p - 1}$ \\
+    $b = (506481 - 148533 \times 60221) \times 161289 \pmod{555556}$ \\
+    $s = (a,b)$ \\
+    \textbf{signature: }$s = (148533,137360)$ \\
+    \textbf{verification: }$y^a a^b \equiv q^m \pmod{p}$ \\
+    $542640 = 542640$ \\
     
-$b = b_1 \times N_1 \times N_1' + b_2 \times N_2 \times N_2' + b_3 \times N_3 \times N_3'$ \\
-$b = 924 + 1683 + 5355$ \\
-$b = 7962$ \\
-$x \equiv b \pmod{N}$ \\
-$x \equiv 7962 \pmod{1309}$ \\
-$x \equiv 108 \pmod{1309}$ \\
-\\
-$108 \equiv 6 \pmod{17}$ \\
-$108 \equiv 3 \pmod{7}$ \\
-$108 \equiv 9 \pmod{11}$ \\
-\\
-$x = 108$
+\end{alphaparts}
+\end{numedquestion}
+    
+\begin{numedquestion}
+    $(n,e)=(581,17)$ \\ 
+    $(m_1,s_1)=(33,192)$ \\
+    $(m_2,s_2)=(6,454)$ \\
+    Existential RSA forgery: \\
+    $m_4 \equiv m_1^2 \pmod{n} \implies s_4 \equiv s_1^2 \pmod{n}$ \\
+    $(m_4,s_4) = (508,261)$ \\
+    $m_3 \equiv m_1 \times m_2 \pmod{n} \implies s_3 \equiv s_1 \times s_2 \pmod{n}$ \\
+    $(m_3,s_3) = (198,18)$ \\
+    
+    $(m_5,s_5) = (198,18)$ \\
+\end{numedquestion}
 
 
-	
+\begin{numedquestion}
 \end{numedquestion}
 
 \begin{numedquestion}
