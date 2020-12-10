@@ -2,7 +2,7 @@
 \newcommand{\myname}{Matej Kňazík} %Write your name in here
 \newcommand{\myUCO}{506481} %write your UCO in here
 \newcommand{\myhwtype}{Homework}
-\newcommand{\myhwnum}{7} %Homework set number
+\newcommand{\myhwnum}{8} %Homework set number
 \newcommand{\myclass}{IV054 2020}
 \newcommand{\mylecture}{} 
 \newcommand{\mysection}{}
@@ -103,164 +103,64 @@
 
 \begin{numedquestion}
 \begin{alphaparts}
+    \item 
+    $h(x) = 5^x \mod 1033 $ \\
+    $h(506581) = 5^506581 \mod 1033$ \\
+    \textbf{hash: }$h(506581) = 232$
     \item
-    $m = 506481$ \\
-    $d = 303703$ \\
-    $e = 7$ \\
-    $n = 1065023$ \\
-    $r = 12345$
-    $s = m^d \pmod{n}$ \\
-    $s = 506481^303703 \pmod{1065023}$ \\
-    \textbf{signature: }$s = 293391$ \\
-    \textbf{verification: }$s^e \pmod{n} = 506481$ \\
-    \item
-    $m = 506481$ \\
-    $(x;q,p,y) = (60221;2,555557,552508)$ \\
-    $a = q^r \pmod{p}$ \\
-    $a = 2^12345 \pmod{555557}$
-    $a = 148533$
-    $b = (m - a \times x) \times r^{-1} \pmod{p - 1}$ \\
-    $b = (506481 - 148533 \times 60221) \times 161289 \pmod{555556}$ \\
-    $s = (a,b)$ \\
-    \textbf{signature: }$s = (148533,137360)$ \\
-    \textbf{verification: }$y^a a^b \equiv q^m \pmod{p}$ \\
-    $542640 = 542640$ \\
-    
+    $E: y^2  = x^3 + 3x + 983 \mod 997$ \\
+    $P=(325,345)$ \\
+    $Q = xP = (a_1,a_2)$ \\
+    $Q = xP = (879,211)$ \\
+    $x = 140$ \\
+    $r = 339$ \\
+    $k = 1034$ \\
+    $s = r^{-1} \times (h(x) - a_1 \times x) \mod k$ \\
+    $r^-1 = 973$ \\
+    $s = 973 \times (232 - 879 \times 140) \mod 1034$ \\
+    \textbf{signature: }$s = 144$ \\
 \end{alphaparts}
 \end{numedquestion}
     
 \begin{numedquestion}
-    $(n,e)=(581,17)$ \\ 
-    $(m_1,s_1)=(33,192)$ \\
-    $(m_2,s_2)=(6,454)$ \\
-    Existential RSA forgery: \\
-    $m_4 \equiv m_1^2 \pmod{n} \implies s_4 \equiv s_1^2 \pmod{n}$ \\
-    $(m_4,s_4) = (508,261)$ \\
-    $m_3 \equiv m_1 \times m_2 \pmod{n} \implies s_3 \equiv s_1 \times s_2 \pmod{n}$ \\
-    $(m_3,s_3) = (198,18)$ \\
+\begin{alphaparts}
+    \item
+    Using elliptic curve point addition law and multiplicative inverses I've checked all combinations of $0\leq a \leq6$ and $0\leq b \leq 6$ for $y^2 = x^3+ax+b \mod 7$ \\
     
-    $(m_5,s_5) = (198,18)$ \\
-\end{numedquestion}
-
-
-\begin{numedquestion}
-\end{numedquestion}
-
-\begin{numedquestion}
-$y$ is a quadratic residue modulo some odd prime $p$, if there exists $x$ such that 
-$x^2 \equiv y \pmod{p}$
-\\
-The Legendre symbol $(\frac{y}{p})$ is defined to be 0 if $y$ is a multiple of $p$, 1 if $y$ is a quadratic residue modulo $p$, and $-1$ otherwise.
-\\
-\begin{math}
-\left(\frac{1}{8009}\right) = 1 \\
-1^2 \equiv 1 \pmod{8009} \\
-\left(\frac{2}{8009}\right) = 1 \\
-3820^2 \equiv 2 \pmod{8009} \\
-\left(\frac{3}{8009}\right) = -1 \\
-3 \textit{ is a quadratic non-residue } \pmod{8009} \\
-\left(\frac{4}{8009}\right) = 1 \\
-2^2 \equiv 4 \pmod{8009} \\
-\left(\frac{5}{8009}\right) = 1 \\
-179^2 \equiv 5 \pmod{8009} \\
-\left(\frac{6}{8009}\right) = -1 \\
-6 \textit{ is a quadratic non-residue } \pmod{8009} \\
-\left(\frac{7}{8009}\right) = 1 \\
-2509^2 \equiv 7 \pmod{8009} \\
-\left(\frac{8}{8009}\right) = 1 \\
-369^2 \equiv 8 \pmod{8009} \\
-\left(\frac{9}{8009}\right) = 1 \\
-3^2 \equiv 9 \pmod{8009} \\
-\left(\frac{10}{8009}\right) = 1 \\
-30152 \equiv 10 \pmod{8009} \\
-\end{math}
-\textbf{Quadratic residuis module the prime 8009 are \{1,2,4,5,7,8,9,10\}}
-\end{numedquestion}
-
-\begin{numedquestion}
-  \begin{alphaparts}
-  \item
-  $n = 698069$ \\
-  $m = 506481$ \\
-  $p \times q = 887 \times 787$ \\
-  $c = m^2 \pmod{n}$ \\
-  $c = 506481^2 \pmod{698069}$ \\
-  $c = 256523003361 \pmod{698069}$ \\
-  \textbf{cyphertext: }$c = 97586$ \\
-  $m_p = \sqrt{c} \pmod{p} = \pm c^{\frac{p+1}{4}} \pmod{p}$ \\
-  $m_q = \sqrt{c} \pmod{q} = \pm c^{\frac{q+1}{4}} \pmod{q}$ \\
-  $m_p = \sqrt{97586} \pmod{887} = \pm 97586^{\frac{888}{4}} \pmod{887}$ \\
-  $m_q = \sqrt{97586} \pmod{787} = \pm 97586^{\frac{788}{4}} \pmod{787}$ \\
-  $m_p = \pm 4$ \\
-  $m_q = \pm 440$ \\
-  \\
-  $m_1p = 4$ \\
-  $m_1q = 440$ \\
-  \\
-  $m_2p = -4$ \\
-  $m_2q = 440$ \\
-  \\
-  $m_3p = 4$ \\
-  $m_3q = -440$ \\
-  \\
-  $m_4p = -4$ \\
-  $m_4q = -440$ \\
-  \\
-  extended Euclidean algorithm = EEA \\
-  EEA(p,q) = \{$y_p,y_q$\} \\
-  EEA(887, 787) = \{-181, 204\} \\
-  $m_1=y_p \times p \times m_1q + y_q \times q \times m_1p \pmod{n}$ \\
-  $m_2=y_p \times p \times m_2q + y_q \times q \times m_2p \pmod{n}$ \\
-  $m_3=y_p \times p \times m_3q + y_q \times q \times m_3p \pmod{n}$ \\
-  $m_4=y_p \times p \times m_4q + y_q \times q \times m_4p \pmod{n}$ \\
-  \\
-  $m_1=-181 \times 887 \times 440 + 204 \times 787 \times 4 \pmod{698069}$ \\
-  $m_2=-181 \times 887 \times 440 + 204 \times 787 \times -4 \pmod{698069}$ \\
-  $m_3=-181 \times 887 \times -440 + 204 \times 787 \times 4 \pmod{698069}$ \\
-  $m_4=-181 \times 887 \times -440 + 204 \times 787 \times -4 \pmod{698069}$ \\
-  \\
-  $m_1= -69998488 \pmod{698069} = 506481$ \\
-  $m_2= -71282872 \pmod{698069} = 618235$\\
-  $m_3= 71282872 \pmod{698069} = 79834$ \\
-  $m_4= 69998488 \pmod{698069} = 191588$ \\
-  \textbf{original plaintext:} $m_1 = m = 506481$
-  \item
-  $m = 506481$ \\
-  $p = 567899$ \\
-  $q = 2$ \\
-  $x = 12345$ \\
-  $r = 938$ \\
-  $y = q^x \pmod{p}$ \\
-  $y = 2^{12345} \pmod{567899}$ \\
-  $y = 222588$ \\
-  $a = q^r \pmod{p}$ \\
-  $a = 2^{938} \pmod{567899}$ \\
-  $a = 201104$ \\
-  $b = y^r \times m \pmod{p}$ \\
-  $b = 222588^{938} \times 506481 \pmod{567899}$ \\
-  $b = 566491$ \\
-  \textbf{ciphertext:} $c = (a,b) = (201104,566491)$
-  
-  \end{alphaparts}
-\end{numedquestion}
-
-\setcounter{questionCounter}{4}
-\begin{numedquestion}
-  \begin{alphaparts}
+    elliptic curve over $\mathbb{F}_7$ could have minimum 4 points (including point at infinity) and maximum 12 points (including point at infinity) \\
+    
+    examples: \\
+    elliptic curve with the minimal number of points: $E_{min} = y^2 = x^3+6 \mod 7$ \\
+    points: $(\infty),(1,0),(2,0),(4,0)$ \\
+    elliptic curve with the maximal number of points: $E_{max} = y^2 = x^3+6x+1 \mod 7$ \\
+    points: $(\infty),(0,1),(0.6),(1,1),(1,6),(2,0),(3,2),(3,5),(5,3),(5,4),(6,1),(6,6)$
+     
     \item
-     P(at least two) = 1 - P(everybody has different) \\
-     P(everybody has different) = $\frac{7}{7} \times \frac{6}{7} \times \frac{5}{7} \times \frac{4}{7} \times \frac{3}{7}$ \\
-     P(everybody has different) $\approx 0.149937526$ \\
-     P(at least two) $\approx 1 - 0.149937526$ \\
-     P(at least two) $\approx 0.850062473969$
-    \item
-    P(exactly two) = $\frac{7}{7} \times \frac{1}{7} \times \frac{6}{7} \times \frac{5}{7} \times \frac{4}{7}$ \\
-    P(exactly two) = $120/2401$ \\
-    P(exactly two) $\approx 0.0499791753436$ \\
-    \item
-    P(at least three) = P(at least two) - P(exactly two) \\
-    P(at least three) $\approx 0.8$
-  \end{alphaparts}
+    $E_{1} = y^2 = x^3+3x+2 \mod 7$ \\
+    $P_{e1} = \{(\infty),(0,3),(0,4),(2,3),(2.4),(4,1),(4,6),(5,3),(5,4)\}$ \\
+    $E_{2} = y^2 = x^3+5x+2 \mod 7$ \\
+    $P_{e2} = \{(\infty),(0,3),(0,4),(1,1),(1.6),(3,3),(3,4),(4,3),(4,4)\}$ \\
+    $P_{e1} \neq P_{e2}$
+\end{alphaparts}
+\end{numedquestion}
+
+
+\setcounter{questionCounter}{3}
+\begin{numedquestion}
+$N = 1927$ \\
+$a = f(1927) = 2^{1927} \mod 1927$ \\
+$a = 1153$ \\
+since $r = 460$ is even then \\
+$(a^{\frac{r}{2}} -1) \times (a^{\frac{r}{2}} +1)$ is divisible by $N$ \\
+since $(a^{\frac{r}{2}} -1)$ is not divisible by $N$ \\
+and also $(a^{\frac{r}{2}} +1)$ is not divisible by $N$ \\
+then $(a^{\frac{r}{2}} -1) \times (a^{\frac{r}{2}} +1)$ must be divisible by both $p$ and $q$\\
+therefore $p = \gcd(N,a^{\frac{r}{2}} -1)$ and $q = \gcd(N,a^{\frac{r}{2}} +1)$ \\
+$p = \gcd(1153^{230} - 1,1927)$ \\
+$q = \gcd(1153^{230} + 1,1927)$ \\
+$p = 47$ \\
+$q = 41$ \\
+\textbf{factorization: }$1927 = 47 \times 41$
 \end{numedquestion}
 
 
