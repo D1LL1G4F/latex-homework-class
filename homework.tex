@@ -2,7 +2,7 @@
 \newcommand{\myname}{Matej Kňazík} %Write your name in here
 \newcommand{\myUCO}{506481} %write your UCO in here
 \newcommand{\myhwtype}{Homework}
-\newcommand{\myhwnum}{8} %Homework set number
+\newcommand{\myhwnum}{9} %Homework set number
 \newcommand{\myclass}{IV054 2020}
 \newcommand{\mylecture}{} 
 \newcommand{\mysection}{}
@@ -103,64 +103,61 @@
 
 \begin{numedquestion}
 \begin{alphaparts}
-    \item 
-    $h(x) = 5^x \mod 1033 $ \\
-    $h(506581) = 5^506581 \mod 1033$ \\
-    \textbf{hash: }$h(506581) = 232$
     \item
-    $E: y^2  = x^3 + 3x + 983 \mod 997$ \\
-    $P=(325,345)$ \\
-    $Q = xP = (a_1,a_2)$ \\
-    $Q = xP = (879,211)$ \\
-    $x = 140$ \\
-    $r = 339$ \\
-    $k = 1034$ \\
-    $s = r^{-1} \times (h(x) - a_1 \times x) \mod k$ \\
-    $r^-1 = 973$ \\
-    $s = 973 \times (232 - 879 \times 140) \mod 1034$ \\
-    \textbf{signature: }$s = 144$ \\
-\end{alphaparts}
-\end{numedquestion}
-    
-\begin{numedquestion}
-\begin{alphaparts}
+    $(n,t) = (5,3)$ \\
+    $p = 567997$ \\
+    $\{x_i = i\}_{i=1}^5$ \\
+    $a_1 = 3^{506481} \mod 101021$ \\
+    $a_2 = 5^{506481} \mod 101021$ \\
+    $a_1 = 53814$ \\
+    $a_2 = 41819$ \\
+    $S = 506481$ \\
+    \[y_i = S + \sum_{j=1}^{t-1} a_j x_{i}^{j} \pmod{p}\]
+    $y_i = a_2x_i^2 + a_1x_i + S \pmod{p}$ \\
+    $y_1 = 41819 + 53814 + 506481 \pmod{567997}$ \\
+    $y_2 = 41819 * 4 + 53814 * 2 + 506481 \pmod{567997}$ \\
+    $y_3 = 41819 * 9 + 53814 * 3 + 506481 \pmod{567997}$ \\
+    $y_4 = 41819 * 16 + 53814 * 4 + 506481 \pmod{567997}$ \\
+    $y_5 = 41819 * 25 + 53814 * 5 + 506481 \pmod{567997}$ \\
+    $y_1 = 34117$ \\
+    $y_2 = 213388$ \\
+    $y_3 = 476297$ \\
+    $y_4 = 254847$ \\
+    $y_5 = 117035$ \\
+    $R_i = (x_i,y_i)$ \\
+    \textbf{shares of the threshold scheme:} $(1,34117),(2,213388),(3,476297),(4,254847),(5,117035)$ \\
     \item
-    Using elliptic curve point addition law and multiplicative inverses I've checked all combinations of $0\leq a \leq6$ and $0\leq b \leq 6$ for $y^2 = x^3+ax+b \mod 7$ \\
-    
-    elliptic curve over $\mathbb{F}_7$ could have minimum 4 points (including point at infinity) and maximum 12 points (including point at infinity) \\
-    
-    examples: \\
-    elliptic curve with the minimal number of points: $E_{min} = y^2 = x^3+6 \mod 7$ \\
-    points: $(\infty),(1,0),(2,0),(4,0)$ \\
-    elliptic curve with the maximal number of points: $E_{max} = y^2 = x^3+6x+1 \mod 7$ \\
-    points: $(\infty),(0,1),(0.6),(1,1),(1,6),(2,0),(3,2),(3,5),(5,3),(5,4),(6,1),(6,6)$
-     
-    \item
-    $E_{1} = y^2 = x^3+3x+2 \mod 7$ \\
-    $P_{e1} = \{(\infty),(0,3),(0,4),(2,3),(2.4),(4,1),(4,6),(5,3),(5,4)\}$ \\
-    $E_{2} = y^2 = x^3+5x+2 \mod 7$ \\
-    $P_{e2} = \{(\infty),(0,3),(0,4),(1,1),(1.6),(3,3),(3,4),(4,3),(4,4)\}$ \\
-    $P_{e1} \neq P_{e2}$
+    $p = 567997$ \\
+    $(1, 438827),(2, 273042),(3, 133864)$ \\
+    $0 \equiv a_2 + a_1 + S - 438827 \pmod{567997}$ \\
+    $0 \equiv 4a_2 + 2a_1 + S - 273042 \pmod{567997}$ \\
+    $0 \equiv 9a_2 + 3a_1 + S - 133864 \pmod{567997}$ \\
+    using CRT I get: \\
+    $a_1 = 78303$ \\
+    $a_2 = 297302$ \\
+    \textbf{secret: }$S = 63222$
 \end{alphaparts}
 \end{numedquestion}
 
 
-\setcounter{questionCounter}{3}
+\setcounter{questionCounter}{2}
 \begin{numedquestion}
-$N = 1927$ \\
-$a = f(1927) = 2^{1927} \mod 1927$ \\
-$a = 1153$ \\
-since $r = 460$ is even then \\
-$(a^{\frac{r}{2}} -1) \times (a^{\frac{r}{2}} +1)$ is divisible by $N$ \\
-since $(a^{\frac{r}{2}} -1)$ is not divisible by $N$ \\
-and also $(a^{\frac{r}{2}} +1)$ is not divisible by $N$ \\
-then $(a^{\frac{r}{2}} -1) \times (a^{\frac{r}{2}} +1)$ must be divisible by both $p$ and $q$\\
-therefore $p = \gcd(N,a^{\frac{r}{2}} -1)$ and $q = \gcd(N,a^{\frac{r}{2}} +1)$ \\
-$p = \gcd(1153^{230} - 1,1927)$ \\
-$q = \gcd(1153^{230} + 1,1927)$ \\
-$p = 47$ \\
-$q = 41$ \\
-\textbf{factorization: }$1927 = 47 \times 41$
+\textbf{Yes}, it is possible. Example could be instance of threshold secret sharing scheme (14000,210) \\
+$1/1 F \lor 3/10G \lor (2/10G \land 5/50C) \lor (1/10G \land 7/50C \land 15/100M)$ \\
+\\
+$(2/10G \land 5/50C) : (10,2) \land (50,5) \implies (2,2) $ \\
+$(1/10G \land 7/50C \land 15/100M) : (10,1) \land (50,7) \land (100,15) \implies (3,3)$ \\
+$1/1 F \lor 3/10G \lor (2/10G \land 5/50C) \lor (1/10G \land 7/50C \land 15/100M) : (1,1) \lor (10,3) \lor (2,2) \lor (3,3) \implies (4,1)$
+\\
+this means that we need to find such threshold secret sharing scheme $(n_s,t_s)$ that would substitute all of these: \\
+$(10,2),(50,5),(2,2),(10,1),(50,7),(100,15),(3,3),(1,1),(10,3),(2,2),(3,3),(4,1)$ \\
+we can create such threshold secret sharing scheme with: (100 * $t_s$/15,LCM(2,5,1,7,15,3)) \\
+e.g to convert $2/10G : (10,2)$ to $(14000,210)$ each of the 10 generals would get 105 shares from (14000,210) etc... \\
+since $t_s$ Least Common Multiple of all $t_i$ this can be done for all of the listed $(n_i,t_i)$
+
+
+
+
 \end{numedquestion}
 
 \begin{numedquestion}
